@@ -1,0 +1,50 @@
+{extend name="public:Basesave"/}
+{block name="content"}
+<form action="{:url('Project/save')}" method="post" class="form form-horizontal" id="form-member-add">
+    <div class="row cl">
+        <label class="form-label col-xs-4 col-sm-3"><span class="c-red">*</span>单位名称：</label>
+        <div class="formControls col-xs-8 col-sm-9">
+            <input type="text" class="input-text" value="{$row['username'] ? $row['username'] : ''}" placeholder="" id="username" name="username">
+        </div>
+    </div>
+
+    <div class="row cl">
+        <label class="form-label col-xs-4 col-sm-3"><span class="c-red">*</span>联系人：</label>
+        <div class="formControls col-xs-8 col-sm-9">
+            <input type="text" class="input-text" value="{$row['contacts'] ? $row['contacts'] : ''}" placeholder="" id="contacts" name="contacts">
+        </div>
+    </div>
+    <div class="row cl">
+        <label class="form-label col-xs-4 col-sm-3"><span class="c-red">*</span>项目名称：</label>
+        <div class="formControls col-xs-8 col-sm-9">
+            <input type="text" class="input-text" value="{$row['project'] ? $row['project'] : ''}" placeholder="" id="project" name="project">
+        </div>
+    </div>
+    <div class="row cl">
+        <label class="form-label col-xs-4 col-sm-3"><span class="c-red">*</span>开展项目名称：</label>
+        <div class="formControls col-xs-8 col-sm-9">
+            <input type="text" class="input-text" value="{$row['content'] ? $row['content'] : ''}" placeholder="" id="content" name="content">
+        </div>
+    </div>
+    <div class="row cl">
+        <label class="form-label col-xs-4 col-sm-3"><span class="c-red">*</span>联系电话：</label>
+        <div class="formControls col-xs-8 col-sm-9">
+            <input type="text" class="input-text" value="{$row['tel'] ? $row['tel'] : ''}" placeholder="" id="tel" name="tel">
+        </div>
+    </div>
+    <div class="row cl">
+        <label class="form-label col-xs-4 col-sm-3"><span class="c-red">*</span>项目状态：</label>
+        <select name="status" class="formControls col-xs-8 col-sm-9">
+            {volist name="status" id="vo"}
+            <option value="{$vo.id}">{$vo.name}</option>
+            {/volist}
+        </select>
+    </div>
+    <input type="hidden" name="id" value="{$row['id'] ? $row['id'] : ''}">
+    <div class="row cl">
+        <div class="col-xs-8 col-sm-9 col-xs-offset-4 col-sm-offset-3">
+            <input class="btn btn-primary radius" type="submit" value="&nbsp;&nbsp;提交&nbsp;&nbsp;">
+        </div>
+    </div>
+</form>
+{/block}

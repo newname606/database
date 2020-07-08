@@ -1,0 +1,75 @@
+{extend name="base"}
+{block name="content"}
+<div class="content">
+    <div class="sub-nav-wrap">
+        <a class="sub-nav" href="{:url('Intro/index')}">大赛简介</a>
+        <a class="sub-nav" href="{:url('Intro/org')}">大赛组织</a>
+        <a class="sub-nav sub-nav-cur" href="javascript:">评审标准</a>
+        <a class="sub-nav" href="{:url('Intro/reward')}">奖励政策</a>
+        <a class="sub-nav" href="{:url('Intro/arrange')}">赛事安排</a>
+        <div class="sub-nav-line"></div>
+    </div>
+    <div class="sub-content no-crumbs">
+        <div class="sub-content-info-wrap">
+            <div class="sub-content-info">
+                <table class="standard-table" border="1" cellspacing="0" cellpadding="0">
+                    <tr>
+                        <th align="center" style="width: 22%;">一级指标及权重</th>
+                        <th align="center" style="width: 22%;">二级指标及权重</th>
+                        <th align="center" style="width: 56%;">指标描述</th>
+                    </tr>
+                    <tr>
+                        <td rowspan="2" align="center">功能性（20%）</td>
+                        <td align="center">创意性（50%）</td>
+                        <td align="left">项目的新颖性，产品设计的独特性、创造性。</td>
+                    </tr>
+                    <tr>
+                        <!-- <td rowspan="2" align="center">功能性（20%）</td> -->
+                        <td align="center">项目方案（50%）</td>
+                        <td align="left">项目技术深度、复杂度、合理性、先进性以及其在市场中的领先程度。</td>
+                    </tr>
+                    <tr>
+                        <td rowspan="3" align="center">实用性（40%）</td>
+                        <td align="center">可实施性（40%）</td>
+                        <td align="left">项目的可实施性和落地情况。</td>
+                    </tr>
+                    <tr>
+                        <!-- <td rowspan="2" align="center">功能性（20%）</td> -->
+                        <td align="center">商用实践（30%）</td>
+                        <td align="left">项目与产业结合的成果与前景。</td>
+                    </tr>
+                    <tr>
+                        <!-- <td rowspan="2" align="center">功能性（20%）</td> -->
+                        <td align="center">示范效应（30%）</td>
+                        <td align="left">项目已开展试点示范，项目对产业链的影响，对所应用的行业发展的影响，以及对技术发展的预期影响。</td>
+                    </tr>
+                    <tr>
+                        <td rowspan="2" align="center">商业性（30%）</td>
+                        <td align="center">商业规划（50%）</td>
+                        <td align="left">项目的获利方式和发展规划；<br>
+                            市场开发策略、份额预期。
+                        </td>
+                    </tr>
+                    <tr>
+                        <!-- <td rowspan="2" align="center">功能性（20%）</td> -->
+                        <td align="center">市场优势（50%）</td>
+                        <td align="left">市场现状和未来需求趋势分析 ；<br> 市场定位、现有以及潜在竞争者对标分析、替代品竞争分析。</td>
+                    </tr>
+                    <tr>
+                        <td align="center">社会效益（10%）</td>
+                        <td align="center">社会效益（100%）</td>
+                        <td align="left">对四川社会服务、文化、民生等的贡献和价值。</td>
+                    </tr>
+                </table>
+            </div>
+        </div>
+
+        <div class="sub-across-bg"></div>
+        <div class="sub-across-bg sub-across-bg-bottom"></div>
+        <div class="sub-vertical-bg"></div>
+        <div class="sub-vertical-bg sub-vertical-bg-right"></div>
+    </div>
+</div>
+</div>
+
+{/block}

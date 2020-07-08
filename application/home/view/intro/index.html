@@ -1,0 +1,86 @@
+{extend name="base"}
+{block name="content"}
+
+<!--公共头部-->
+    <div class="content">
+        <div class="sub-nav-wrap">
+            <a class="sub-nav sub-nav-cur" href="javascript:">大赛简介</a>
+            <a class="sub-nav" href="{:url('Intro/org')}">大赛组织</a>
+            <a class="sub-nav" href="{:url('Intro/standard')}">评审标准</a>
+            <a class="sub-nav" href="{:url('Intro/reward')}">奖励政策</a>
+            <a class="sub-nav" href="{:url('Intro/arrange')}">赛事安排</a>
+            <div class="sub-nav-line"></div>
+        </div>
+        <div class="crumbs-nav-wrap">
+            <div class="crumbs-nav crumbs-nav-cur">大赛背景</div>
+            <div class="crumbs-nav">参赛资格</div>
+            <div class="crumbs-nav">参赛项目</div>
+            <div class="crumbs-nav">报名方式</div>
+        </div>
+        <div class="sub-content">
+            <div class="sub-content-info-wrap">
+                <div class="sub-content-info">
+                    为加快推进四川省5G应用和产业发展，实现5G创新赋能，推动经济社会高质量发展，按照第三届“绽放杯”5G应用征集大赛启动工作相关要求，四川省通信管理局、四川省总工会共同举办四川省5G创新应用大赛。
+                </div>
+            </div>
+            <div class="sub-content-info-wrap" style="display: none;">
+                <div class="sub-content-info">
+                    <img src="__HOME_IMG__/stars.png"> &nbsp; 四川省内企事业单位、专业组织、团队或个人可以报名参赛（联合参赛的至少应有一家为四川省内企业，
+                    <br />由牵头单位报名）。
+                </div>
+                <div class="sub-content-info">
+                    <img src="__HOME_IMG__/stars.png"> &nbsp; 参赛单位、团队或个人无不良记录。
+                </div>
+            </div>
+            <div class="sub-content-info-wrap" style="display: none;">
+                <div class="sub-content-info">
+                    <img src="__HOME_IMG__/stars.png"> &nbsp; 参赛项目面向云XR、工业互联网、智慧生活、医疗健康、智慧金融、智慧商业、智慧传播、智慧交通等重点领域，与我省相关产业相结合。
+                </div>
+                <div class="sub-content-info">
+                    <img src="__HOME_IMG__/stars.png"> &nbsp; 参赛项目的创意、产品、技术及相关专利归属参赛单位、团队或个人，无知识产权纠纷。
+                </div>
+                <div class="sub-content-info">
+                    <img src="__HOME_IMG__/stars.png"> &nbsp; 参赛者应严格遵守法律法规，不得剽窃、侵夺他人创新成果，不得利用不正当手段获取参赛资格和奖项。
+                </div>
+            </div>
+            <div class="sub-content-info-wrap" style="display: none;">
+                <div class="sub-content-info" style="font-size: 20px;">
+                    <img src="__HOME_IMG__/stars.png"> &nbsp; 即日起至2020年7月30日24:00止，逾期不再接收报名。
+                </div>
+                <div class="sub-content-info" style="font-size: 20px;">
+                    <img src="__HOME_IMG__/stars.png"> &nbsp; 通过大赛首页参赛报名通道,报名并获取报名编号（报名资料需填写此编号）。
+                </div>
+ <div class="sub-content-info" style="font-size: 20px;">
+                    <img src="__HOME_IMG__/stars.png"> &nbsp;下载填写报名材料并上传至大赛官方指定邮箱（<span class="b-bottom">sc5gds@163.com</span>）。
+                </div>
+                <div class="sub-content-info" style="font-size: 20px;">
+                   <img src="__HOME_IMG__/stars.png"> &nbsp; 报名材料模板
+					<a class="content-download" href="/baoming.zip" style="font-size: 20px;">点击下载</a>
+                </div>
+           
+            </div>
+
+            <div class="sub-across-bg"></div>
+            <div class="sub-across-bg sub-across-bg-bottom"></div>
+            <div class="sub-vertical-bg"></div>
+            <div class="sub-vertical-bg sub-vertical-bg-right"></div>
+        </div>
+    </div>
+</div>
+<script>
+
+
+    $(function () {
+        $('.crumbs-nav').click(function () {
+            var index = $(this).index();
+            $('.crumbs-nav').removeClass('crumbs-nav-cur');
+            $(this).addClass('crumbs-nav-cur');
+            $('.sub-content-info-wrap').css('display', 'none');
+            $('.sub-content-info-wrap').eq(index).css('display', 'block');
+        })
+
+    })
+</script>
+{/block}
+
+

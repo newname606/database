@@ -1,0 +1,36 @@
+{extend name="public:Basesave"/}
+{block name="content"}
+<form action="{:url('User/save')}" method="post" class="form form-horizontal" id="form-member-add">
+    <div class="row cl">
+        <label class="form-label col-xs-4 col-sm-3"><span class="c-red">*</span>用户名：</label>
+        <div class="formControls col-xs-8 col-sm-9">
+            <input type="text" class="input-text" value="{$row['username'] ? $row['username'] : ''}" placeholder="" id="username" name="username">
+        </div>
+    </div>
+
+    <div class="row cl">
+        <label class="form-label col-xs-4 col-sm-3"><span class="c-red">*</span>密码：</label>
+        <div class="formControls col-xs-8 col-sm-9">
+            <input type="password" class="input-text" value="{$row['password'] ? $row['password'] : ''}" placeholder="" id="password" name="password">
+        </div>
+    </div>
+    <div class="row cl">
+        <label class="form-label col-xs-4 col-sm-3"><span class="c-red">*</span>确认密码：</label>
+        <div class="formControls col-xs-8 col-sm-9">
+            <input type="password" class="input-text" value="{$row['password2'] ? $row['password2'] : ''}" placeholder="" id="password2" name="password2">
+        </div>
+    </div>
+    <div class="row cl">
+        <label class="form-label col-xs-4 col-sm-3"><span class="c-red">*</span>电话：</label>
+        <div class="formControls col-xs-8 col-sm-9">
+            <input type="text" class="input-text" value="{$row['tel'] ? $row['tel'] : ''}" placeholder="" id="tel" name="tel">
+        </div>
+    </div>
+    <input type="hidden" name="id" value="{$row['id'] ? $row['id'] : ''}">
+    <div class="row cl">
+        <div class="col-xs-8 col-sm-9 col-xs-offset-4 col-sm-offset-3">
+            <input class="btn btn-primary radius" type="submit" value="&nbsp;&nbsp;提交&nbsp;&nbsp;">
+        </div>
+    </div>
+</form>
+{/block}

@@ -1,0 +1,113 @@
+{extend name="base"}
+{block name="content"}
+<div class="content user-wrap">
+    <div class="user-title">基本信息</div>
+    <form action="{:url('User/sign')}" name="myform" method="post" enctype="multipart/form-data">
+    <div class="user-base-info">
+        <div class="base-info-wrap">
+            <div class="base-info-item">
+                <span>参赛项目名称：</span>
+                <span><input class="input-user" type="text" name="project" value=""></span>
+            </div>
+            <div class="base-info-item">
+                <span>参赛单位名称：</span>
+                <span><input class="input-user" type="text" name="username" value=""></span>
+            </div>
+        </div>
+        <div class="base-info-wrap">
+            <div class="base-info-item">
+                <span>联系人：</span>
+                <span><input class="input-user" type="text" name="contacts" value=""></span>
+            </div>
+            <div class="base-info-item">
+                <span>联系电话：</span>
+                <span><input class="input-user" type="text" name="tel" id="tel" value=""></span>
+            </div>
+        </div>
+    </div>
+    <div class="user-info">
+        <div class="user-info-title">在川开展项目名称：</div>
+        <div class="info-textarea">
+            <textarea rows="4" name="content" id="content"></textarea>
+        </div>
+    </div>
+    <div style="text-align: center;"><input class="input_submit" type="button" value="点击参赛"></div>
+    </form>
+</div>
+<!-- 报名成功弹窗 -->
+<div class="pop-model-wrap" id="sign-success">
+    <div class="pop-model">
+        <div class="pop-closed"></div>
+        <form class="pop-form">
+            <div class="model-info-btn sign-succ">报名成功</div>
+            <div class="model-info-btn sign-code">您的参赛编号为：<span id="u_id"></span></div>
+            <div class="model-info-tip">
+                请在规定的时间内上传报名材料至邮箱（sc5gds@163.com）
+            </div>
+            <a class="sign-message c-blue" href="{:url('User/serch')}">查看报名信息</a>
+        </form>
+    </div>
+</div>
+<script type="text/javascript">
+
+    $(".input_submit").click(function () {
+        var username = document.getElementsByName("username")[0].value;
+        if(username == ""){
+            tip("参赛单位名称不能为空");
+            return false;
+        }
+
+        var project = document.getElementsByName("project")[0].value;
+        if(project == ""){
+            tip("参赛项目名称不能为空");
+            return false;
+        }
+
+        var content = document.getElementsByName("content")[0].value;
+        if(content == ""){
+            tip("在川开展项目名称不能为空");
+            return false;
+        }
+
+        var contacts = document.getElementsByName("contacts")[0].value;
+        if(contacts == ""){
+            tip("联系人不能为空");
+            return false;
+        }
+
+        var tel = document.getElementsByName("tel")[0].value;
+        if(tel == ""){
+            tip("联系电话不能为空");
+            return false;
+        }
+        if(!(/^1[3456789]\d{9}$/.test(tel))){
+            tip("联系电话有误，请重填");
+            return false;
+        }
+
+       $.ajax({
+           type:"post",
+           url:"{:url('User/sign')}",
+           data:{
+               username:username,
+               project:project,
+               contacts:contacts,
+               tel:tel,
+               content:content,
+           },
+           success : function (data) {
+               if(data.status == 1){
+				   $('#sign-success').css('display', 'block');
+                   $("#u_id").text(data.uid);
+                   // tip("报名成功");
+                   return true;
+               }else{
+                   tip("报名失败,请联系管理员");
+                   return false;
+               }
+           }
+       },'json')
+    })
+
+</script>
+{/block}

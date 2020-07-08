@@ -1,0 +1,27 @@
+{extend name="base"}
+{block name="content"}
+<div class="content">
+    <div class="sub-nav-wrap">
+        <a class="sub-nav" href="{:url('Intro/index')}">大赛简介</a>
+        <a class="sub-nav" href="{:url('Intro/org')}">大赛组织</a>
+        <a class="sub-nav" href="{:url('Intro/standard')}">评审标准</a>
+        <a class="sub-nav" href="{:url('Intro/reward')}">奖励政策</a>
+        <a class="sub-nav sub-nav-cur" href="javascript:">赛事安排</a>
+        <div class="sub-nav-line"></div>
+    </div>
+    <div class="sub-content no-crumbs">
+		<div class="arrange-sub">
+			<span class="arrange-sub-time" style="bottom:-10px; left:60px;">参赛报名(7月30日截止)</span>
+			<span class="arrange-sub-time" style="top:-10px; left:380px;">初选（8月初）</span>
+			<span class="arrange-sub-time" style="bottom:-10px; right:330px;">复赛（8月中旬）</span>
+			<span class="arrange-sub-time" style="top:-10px; right:100px;">决赛（8月底）</span>
+			<span class="arrange-sub-time" style="bottom:-120px; left:400px;">具体时间以官方通知为准</span>
+		</div>
+        <div class="sub-across-bg"></div>
+        <div class="sub-across-bg sub-across-bg-bottom"></div>
+        <div class="sub-vertical-bg"></div>
+        <div class="sub-vertical-bg sub-vertical-bg-right"></div>
+    </div>
+</div>
+</div>
+{/block}

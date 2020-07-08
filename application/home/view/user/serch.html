@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+
+    <link rel="stylesheet" href="__HOME_CSS__/base.css">
+    <link rel="stylesheet" href="__HOME_CSS__/index.css">
+    <script type="text/javascript" src="__HOME_JS__/jquery.js"></script>
+    <style>
+        table {
+            border-collapse: collapse;
+            margin: auto;
+        }
+
+        table,
+        td,
+        th {
+            font-size: 16px;
+            border: 1px solid white;
+            text-align: center;
+            padding: 10px 0;
+
+        }
+        td{
+            color: white;
+        }
+        th {
+            background-color: #337ab7;
+            color: white;
+            min-width: 150px;
+
+        }
+    </style>
+</head>
+<body>
+<div class="main">
+    <div class="top-nav">
+       
+        {if condition="$nav eq 1"}
+        <div class="nav-list">
+            <a class="nav nav-cur" href="{:url('Index/index')}">大赛首页</a>
+            <a class="nav" href="{:url('Intro/index')}">大赛指南</a>
+            <a class="nav" href="{:url('News/index')}">大赛新闻</a>
+        </div>
+        {elseif condition="$nav eq 2" /}
+        <div class="nav-list">
+            <a class="nav" href="{:url('Index/index')}">大赛首页</a>
+            <a class="nav nav-cur" href="{:url('Intro/index')}">大赛指南</a>
+            <a class="nav" href="{:url('News/index')}">大赛新闻</a>
+        </div>
+        {else /}
+        <div class="nav-list">
+            <a class="nav" href="{:url('Index/index')}">大赛首页</a>
+            <a class="nav" href="{:url('Intro/index')}">大赛指南</a>
+            <a class="nav nav-cur" href="javascript;">大赛新闻</a>
+        </div>
+        {/if}
+
+        <div class="top-login">
+
+            {if condition="$Think.session.username eq null"}
+            <span class="reg-btn">注册</span>
+            <span class="top-login-center">|</span>
+            <span class="login-btn">登录</span>
+            {else/}
+            <span>欢迎{$Think.session.username}</span>
+            &nbsp;&nbsp;&nbsp;
+            <a style="font-size: 25px;" href="{:url('User/logout')}">退出登录</a>
+            {/if}
+        </div>
+    </div>
+    <div class="logo"></div>
+</div>
+<table>
+    <tr>
+        <th>报名编号</th>
+        <th>项目名称</th>
+        <th>参赛主体</th>
+        <th>参赛主体名称</th>
+        <th>联系人</th>
+        <th>联系电话</th>
+        <th style="width: 300px;">在川开展项目名称</th>
+        <th >项目状态</th>
+
+    </tr>
+    {volist name="lists" id="list"}
+    <tr>
+        <td>{$list.u_id}</td>
+        <td>{$list.project}</td>
+        {if condition="$list['body'] eq 0"}
+        <td>个人</td>
+        {elseif condition="$list['body'] eq 1"/}
+        <td>单位</td>
+        {else /}
+        <td>团队</td>
+        {/if}
+        <td>{$list['username']?$list['username']:''}</td>
+        <td>{$list.contacts}</td>
+        <td>{$list.tel}</td>
+        <td>{$list.content}</td>
+        <td>{$list.s_name}</td>
+    </tr>
+    {/volist}
+</table>
+<script type="text/javascript" src="__HOME_JS__/base.js"></script>
+
+</body>
+</html>
